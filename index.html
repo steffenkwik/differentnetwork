@@ -3,22 +3,22 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-<title>Steffen Kwik - AI Builder · Founder of Different Network</title>
+<title>Different Network - Komunitas AI #1 Indonesia</title>
 
-<meta name="description" content="Steffen Kwik - AI builder & founder of Different Network, komunitas AI #1 di Indonesia. Agentic AI, neural networks, dan automation. Gabung & terhubung.">
-<meta name="author" content="Steffen Kwik">
+<meta name="description" content="Different Network - komunitas & ekosistem AI #1 di Indonesia. Bukan sekadar platform, ini gerakan. Gabung program sertifikasi praktisi AI & komunitas Discord aktif 24/7.">
+<meta name="author" content="Different Network">
 <meta name="theme-color" content="#000000">
 
-<meta property="og:type" content="profile">
-<meta property="og:title" content="Steffen Kwik - AI Builder · Founder of Different Network">
-<meta property="og:description" content="AI builder & founder of Different Network - komunitas AI #1 di Indonesia.">
-<meta property="og:image" content="./steffen.webp">
-<meta property="og:site_name" content="Steffen Kwik">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Different Network - Komunitas AI #1 Indonesia">
+<meta property="og:description" content="Bukan sekadar platform. Ini gerakan. Komunitas & ekosistem AI #1 di Indonesia.">
+<meta property="og:image" content="./logo.webp">
+<meta property="og:site_name" content="Different Network">
 
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Steffen Kwik - AI Builder">
-<meta name="twitter:description" content="Founder of Different Network - komunitas AI #1 di Indonesia.">
-<meta name="twitter:image" content="./steffen.webp">
+<meta name="twitter:title" content="Different Network - Komunitas AI #1 Indonesia">
+<meta name="twitter:description" content="Bukan sekadar platform. Ini gerakan. Komunitas AI #1 di Indonesia.">
+<meta name="twitter:image" content="./logo.webp">
 <meta name="twitter:creator" content="@SteffenKwik">
 
 <meta name="apple-mobile-web-app-capable" content="yes">
@@ -740,6 +740,63 @@ img{display:block;max-width:100%}
   .laptop-hero{max-width:600px;margin:20px auto}
 }
 
+/* ════════════════════════════ HERO LOGO + CTA (company) ════════════════════════════ */
+.hero-logo{position:relative;width:min(330px,80vw);aspect-ratio:1;margin-bottom:8px;flex-shrink:0}
+.hl-glow{position:absolute;inset:8%;border-radius:50%;
+  background:radial-gradient(circle,rgba(255,77,0,.42),rgba(255,77,0,.06) 56%,transparent 72%);
+  filter:blur(26px);z-index:0;animation:bob 7s ease-in-out infinite}
+.hl-mark{position:absolute;inset:0;z-index:2;width:74%;height:74%;margin:13%;object-fit:contain;
+  filter:drop-shadow(0 0 28px rgba(255,77,0,.55));animation:bob 7s ease-in-out infinite}
+
+.hero-tag{font-family:var(--f-disp);font-weight:600;font-size:clamp(.98rem,2.7vw,1.34rem);
+  letter-spacing:.01em;color:#fff;margin-top:18px;line-height:1.32;text-shadow:0 1px 12px rgba(0,0,0,.6)}
+.hero-tag .o{color:var(--orange)}
+.hero-cta{display:flex;gap:12px;margin-top:24px;flex-wrap:wrap}
+.btn-primary,.btn-ghost{display:inline-flex;align-items:center;gap:10px;
+  font-family:var(--f-disp);font-weight:700;font-size:clamp(.82rem,2vw,.96rem);
+  letter-spacing:.06em;text-transform:uppercase;padding:14px 28px;border-radius:100px;
+  text-decoration:none;transition:transform .3s var(--ease),box-shadow .3s,background .3s,border-color .3s,color .3s}
+.btn-primary{background:var(--orange);color:#fff;box-shadow:0 8px 30px rgba(255,77,0,.4)}
+.btn-primary:hover{transform:translateY(-3px) scale(1.02);box-shadow:0 16px 44px rgba(255,77,0,.6)}
+.btn-ghost{background:rgba(13,13,17,.62);color:#fff;border:1px solid var(--line-2)}
+.btn-ghost:hover{transform:translateY(-3px);border-color:var(--orange);background:rgba(255,77,0,.08);color:var(--orange)}
+
+/* ════════════════════════════ FOUNDER SPOTLIGHT ════════════════════════════ */
+.founder-spot{width:100%;display:flex;align-items:center;gap:40px;flex-wrap:wrap;padding:24px 0 10px}
+.founder-spot .stage{flex-shrink:0;margin-bottom:0}
+.fs-info{flex:1;min-width:262px}
+.fs-eyebrow{font-family:var(--f-mono);font-size:9px;letter-spacing:.26em;text-transform:uppercase;
+  color:var(--orange);margin-bottom:14px;display:flex;align-items:center;gap:10px}
+.fs-eyebrow::before{content:'';width:30px;height:1px;background:var(--orange);opacity:.5}
+.fs-name{font-family:var(--f-disp);font-weight:700;font-size:clamp(2rem,6vw,3.2rem);
+  text-transform:uppercase;letter-spacing:.02em;line-height:1}
+.fs-role{font-family:var(--f-mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--muted);margin-top:10px}
+.fs-quote{font-family:var(--f-ui);font-size:clamp(.9rem,2.3vw,1.04rem);line-height:1.72;
+  color:rgba(255,255,255,.72);margin-top:18px;max-width:520px}
+.fs-quote b{color:#fff;font-weight:600}
+.fs-link{display:inline-flex;align-items:center;gap:9px;margin-top:22px;
+  font-family:var(--f-disp);font-weight:600;font-size:.9rem;letter-spacing:.04em;color:#fff;
+  padding:11px 22px;border:1px solid var(--line-2);border-radius:100px;text-decoration:none;
+  transition:border-color .3s,color .3s,transform .3s var(--ease)}
+.fs-link:hover{border-color:var(--orange);color:var(--orange);transform:translateX(3px)}
+@media (min-width:980px){
+  .hero-logo{width:400px;margin-bottom:0}
+  .founder-spot{gap:56px;padding:32px 0 14px}
+  .founder-spot .stage{width:380px}
+}
+@media (max-width:560px){
+  .hero-tag{font-size:.94rem;margin-top:12px;text-align:center}
+  .hero-cta{justify-content:center;gap:9px;margin-top:16px}
+  .btn-primary,.btn-ghost{padding:11px 20px;font-size:.76rem}
+  .hero-logo{width:46vw;max-width:164px;margin-bottom:0}
+  .founder-spot{flex-direction:column;gap:14px;text-align:center;padding:6px 0}
+  .fs-eyebrow{justify-content:center}
+  .fs-quote{text-align:left;font-size:.86rem;line-height:1.65}
+  .fs-info{min-width:0}
+  .fs-link{margin-top:16px;padding:10px 18px;font-size:.82rem}
+}
+
 @media (prefers-reduced-motion:reduce){
   *,*::before,*::after{animation-duration:.001ms!important;animation-iteration-count:1!important;
     transition-duration:.001ms!important;scroll-behavior:auto!important}
@@ -751,7 +808,7 @@ img{display:block;max-width:100%}
 
 <!-- ══════ BOOT ══════ -->
 <div id="boot">
-  <div class="boot-mark"><span class="b">{</span><span class="s">SK</span><span class="b">}</span></div>
+  <div class="boot-mark"><span class="b">{</span><span class="s">DN</span><span class="b">}</span></div>
   <div class="boot-bar"></div>
   <div class="boot-txt" id="bootTxt">BOOTING SYSTEM</div>
 </div>
@@ -779,14 +836,14 @@ img{display:block;max-width:100%}
       <img class="tb-logo" src="./logo-mark.png" alt="Different Network logo">
       <span class="tb-name">DIFFERENT<span>·</span>NETWORK</span>
     </div>
-    <div class="tb-status"><b></b>AVAILABLE FOR COLLAB</div>
+    <div class="tb-status"><b></b>KOMUNITAS AKTIF 24/7</div>
   </div>
 
   <!-- HERO -->
   <section class="hero">
 
-    <div class="stage reveal" style="animation-delay:.1s" id="stage">
-      <div class="stage-glow" data-depth="2"></div>
+    <div class="hero-logo reveal" style="animation-delay:.1s" id="heroLogo">
+      <div class="hl-glow"></div>
 
       <!-- decorative neural rings -->
       <svg class="ring-deco" viewBox="0 0 100 100" aria-hidden="true">
@@ -794,38 +851,37 @@ img{display:block;max-width:100%}
         <circle class="r-spin-2" cx="50" cy="50" r="42" stroke="rgba(255,255,255,.12)" stroke-width=".3" stroke-dasharray="1 8"/>
       </svg>
 
-      <div class="portrait-layer">
-        <picture>
-          <source srcset="./steffen.webp" type="image/webp">
-          <img class="portrait" src="./steffen.png" alt="Foto Steffen Kwik" data-depth="-1.4" id="portrait">
-        </picture>
-      </div>
-
-      <!-- quote revealed on hover -->
-      <div class="quote-layer" aria-hidden="true">
-        <span class="q-mark">&ldquo;</span>
-        <p class="q-text">Beri aku tempat untuk <span class="o">berpijak</span>, dan aku akan memindahkan <span class="o">dunia</span>.</p>
-        <span class="q-by">~ Archimedes</span>
-      </div>
+      <picture>
+        <source srcset="./logo.webp" type="image/webp">
+        <img class="hl-mark" src="./logo-mark.png" alt="Logo Different Network">
+      </picture>
 
       <!-- orbiting AI nodes -->
-      <div class="orbit-node on-1" data-depth="2.2"><i></i>AGENTIC AI</div>
-      <div class="orbit-node on-2" data-depth="3"><i></i>NEURAL NET</div>
-      <div class="orbit-node on-3" data-depth="2.6"><i></i>AUTOMATION</div>
+      <div class="orbit-node on-1"><i></i>AGENTIC AI</div>
+      <div class="orbit-node on-2"><i></i>NEURAL NET</div>
+      <div class="orbit-node on-3"><i></i>AUTOMATION</div>
     </div>
 
     <div class="hero-id">
-      <div class="eyebrow reveal" style="animation-delay:.16s">AI BUILDER · INDONESIA</div>
+      <div class="eyebrow reveal" style="animation-delay:.16s">KOMUNITAS AI #1 INDONESIA</div>
 
       <h1 class="name reveal" id="name" style="animation-delay:.2s">
-        <span class="w1">STEFFEN</span> <span class="w2" data-t="KWIK">KWIK</span>
+        <span class="w1">DIFFERENT</span> <span class="w2" data-t="NETWORK">NETWORK</span>
       </h1>
 
       <div class="role reveal" style="animation-delay:.26s"><span id="roleText"></span><span class="cur"></span></div>
 
-      <div class="founder reveal" style="animation-delay:.32s">
-        <img src="./logo-mark.png" alt="">
-        <span>Founder of <b>Different Network</b></span>
+      <p class="hero-tag reveal" style="animation-delay:.3s">Bukan sekadar platform. <span class="o">Ini gerakan.</span></p>
+
+      <div class="hero-cta reveal" style="animation-delay:.36s">
+        <a class="btn-primary" href="https://differentnetworkai.com" target="_blank" rel="noopener noreferrer" aria-label="Gabung program sertifikasi Different Network">
+          Gabung Sekarang
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </a>
+        <a class="btn-ghost" href="https://discord.gg/BU8BbvjA" target="_blank" rel="noopener noreferrer" aria-label="Join Discord Different Network">
+          <svg width="16" height="12" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.32 4.37A19.79 19.79 0 0 0 15.45 3c-.21.38-.46.89-.62 1.29a18.27 18.27 0 0 0-5.66 0C9 3.89 8.74 3.38 8.55 3a19.79 19.79 0 0 0-4.88 1.37C.56 9 .26 13.58.41 18.1a19.9 19.9 0 0 0 6.07 3.08c.49-.67.93-1.39 1.3-2.14-.71-.27-1.39-.6-2.04-.99.17-.13.34-.26.5-.39a14.2 14.2 0 0 0 12.12 0c.16.14.33.27.5.39-.65.39-1.34.72-2.05.99.37.75.81 1.47 1.3 2.14a19.84 19.84 0 0 0 6.07-3.08c.24-5.24-.67-9.78-3.96-13.73zM8.02 15.33c-1.18 0-2.16-1.08-2.16-2.42s.95-2.42 2.16-2.42 2.18 1.09 2.16 2.42c0 1.34-.95 2.42-2.16 2.42zm7.96 0c-1.18 0-2.16-1.08-2.16-2.42s.95-2.42 2.16-2.42 2.18 1.09 2.16 2.42c0 1.34-.94 2.42-2.16 2.42z"/></svg>
+          Join Discord
+        </a>
       </div>
     </div>
   </section>
@@ -1034,6 +1090,56 @@ img{display:block;max-width:100%}
     </ul>
   </div>
 
+  <!-- ════ FOUNDER SPOTLIGHT ════ -->
+  <div class="label reveal" style="animation-delay:.655s">
+    <span class="lead">
+      <svg width="12" height="12" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="8" r="4" stroke="#ff4d00" stroke-width="2"/><path d="M4 21c0-4 3.6-6 8-6s8 2 8 6" stroke="#ff4d00" stroke-width="2" stroke-linecap="round"/></svg>
+      <span class="br">{</span> FOUNDER · DI BALIK GERAKAN <span class="br">}</span>
+    </span>
+  </div>
+
+  <section class="founder-spot reveal" style="animation-delay:.66s">
+    <div class="stage" id="stage" role="button" tabindex="0" aria-label="Foto Steffen Kwik - arahkan kursor atau ketuk untuk lihat quote">
+      <div class="stage-glow" data-depth="2"></div>
+
+      <!-- decorative neural rings -->
+      <svg class="ring-deco" viewBox="0 0 100 100" aria-hidden="true">
+        <circle class="r-spin" cx="50" cy="50" r="47" stroke="rgba(255,77,0,.18)" stroke-width=".4" stroke-dasharray="2 5"/>
+        <circle class="r-spin-2" cx="50" cy="50" r="42" stroke="rgba(255,255,255,.12)" stroke-width=".3" stroke-dasharray="1 8"/>
+      </svg>
+
+      <div class="portrait-layer">
+        <picture>
+          <source srcset="./steffen.webp" type="image/webp">
+          <img class="portrait" src="./steffen.png" alt="Foto Steffen Kwik" data-depth="-1.4" id="portrait">
+        </picture>
+      </div>
+
+      <!-- quote revealed on hover -->
+      <div class="quote-layer" aria-hidden="true">
+        <span class="q-mark">&ldquo;</span>
+        <p class="q-text">Beri aku tempat untuk <span class="o">berpijak</span>, dan aku akan memindahkan <span class="o">dunia</span>.</p>
+        <span class="q-by">~ Archimedes</span>
+      </div>
+
+      <!-- orbiting AI nodes -->
+      <div class="orbit-node on-1" data-depth="2.2"><i></i>AI BUILDER</div>
+      <div class="orbit-node on-2" data-depth="3"><i></i>FOUNDER</div>
+      <div class="orbit-node on-3" data-depth="2.6"><i></i>INDONESIA</div>
+    </div>
+
+    <div class="fs-info">
+      <div class="fs-eyebrow">FOUNDER · DIFFERENT NETWORK</div>
+      <h2 class="fs-name"><span style="color:#fff">STEFFEN</span> <span style="color:var(--orange)">KWIK</span></h2>
+      <div class="fs-role">AI Builder · Indonesia</div>
+      <p class="fs-quote">Di tengah banjir konten AI yang penuh hype kosong dan janji palsu, Steffen memilih jalan berbeda - jujur, tajam, berbasis data, dan selalu berpihak pada komunitas. <b>Orang yang menguasai AI hari ini akan menentukan nasibnya sendiri esok hari.</b></p>
+      <a class="fs-link" href="https://steffenkwik.pages.dev" target="_blank" rel="noopener noreferrer">
+        Lihat Profil Founder
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"/></svg>
+      </a>
+    </div>
+  </section>
+
   <!-- ════ LAPTOP HERO VISUAL ════ -->
   <div class="laptop-hero reveal" style="animation-delay:.66s" aria-hidden="true">
     <picture>
@@ -1218,6 +1324,7 @@ img{display:block;max-width:100%}
   }else{
     stage.addEventListener('click',function(){stage.classList.toggle('show-quote');});
   }
+  stage.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();stage.classList.toggle('show-quote');}});
 })();
 
 /* ════════ VIRGIL ⇄ STEFFEN SWAP ════════ */
@@ -1233,7 +1340,7 @@ img{display:block;max-width:100%}
   card.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();card.classList.toggle('show-me');}});
 })();
 
-/* ════════ AUTO-CYCLE — briefly flash the alt state, then back ════════ */
+/* ════════ AUTO-CYCLE - briefly flash the alt state, then back ════════ */
 (function(){
   if(matchMedia('(prefers-reduced-motion:reduce)').matches)return;
   function autoSwap(el,cls,mainMs,altMs,startDelay){
@@ -1282,7 +1389,7 @@ img{display:block;max-width:100%}
 /* ════════ TYPEWRITER ROLE ════════ */
 (function(){
   var el=document.getElementById('roleText');
-  var roles=['AI BUILDER & ENGINEER','AGENTIC SYSTEMS ARCHITECT','FOUNDER · DIFFERENT NETWORK','BUILDING AI IN INDONESIA'];
+  var roles=['KOMUNITAS AI #1 INDONESIA','EKOSISTEM BELAJAR AI','BUKAN PENONTON - TAPI PELAKU','GERAKAN MELEK AI INDONESIA'];
   var ri=0,ci=0,del=false;
   function tick(){
     var w=roles[ri];
