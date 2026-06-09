@@ -169,7 +169,7 @@ img{display:block;max-width:100%}
 /* ════════════════════ HERO ════════════════════ */
 .hero{position:relative;width:100%;min-height:100svh;display:flex;flex-direction:column;
   align-items:center;justify-content:center;text-align:center;padding:96px 0 40px;gap:6px}
-.hero-logo{position:relative;width:min(220px,52vw);aspect-ratio:1;margin-bottom:6px;flex-shrink:0}
+.hero-logo{position:relative;width:min(320px,68vw);aspect-ratio:1;margin-bottom:6px;flex-shrink:0}
 .hl-glow{position:absolute;inset:8%;border-radius:50%;
   background:radial-gradient(circle,rgba(255,77,0,.42),rgba(255,77,0,.06) 56%,transparent 72%);
   filter:blur(26px);z-index:0;animation:bob 7s ease-in-out infinite}
@@ -179,8 +179,8 @@ img{display:block;max-width:100%}
 .r-spin{transform-origin:center;animation:spin 26s linear infinite}
 .r-spin-2{transform-origin:center;animation:spin 34s linear infinite reverse}
 @keyframes spin{to{transform:rotate(360deg)}}
-.hl-mark{position:absolute;inset:0;z-index:2;width:74%;height:74%;margin:13%;object-fit:contain;
-  filter:drop-shadow(0 0 28px rgba(255,77,0,.55));animation:bob 7s ease-in-out infinite}
+.hl-mark{position:absolute;inset:0;z-index:2;width:86%;height:86%;margin:7%;object-fit:contain;
+  mix-blend-mode:screen;animation:bob 7s ease-in-out infinite}
 .orbit-node{position:absolute;z-index:3;display:flex;align-items:center;gap:6px;
   padding:5px 10px;border-radius:30px;background:rgba(10,10,12,.7);border:1px solid var(--line-2);
   backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);font-family:var(--f-mono);font-size:8px;
@@ -241,13 +241,6 @@ img{display:block;max-width:100%}
 .hstat-div{width:1px;align-self:stretch;background:linear-gradient(transparent,var(--line-2),transparent)}
 @media (max-width:560px){.hstat-div{display:none}.hero-stats{gap:20px 28px}}
 
-.scroll-cue{position:absolute;bottom:22px;left:50%;transform:translateX(-50%);
-  display:flex;flex-direction:column;align-items:center;gap:7px;
-  font-family:var(--f-mono);font-size:7.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--muted)}
-.scroll-cue .mouse{width:20px;height:32px;border:1.5px solid var(--line-2);border-radius:12px;position:relative}
-.scroll-cue .mouse::after{content:'';position:absolute;top:6px;left:50%;transform:translateX(-50%);
-  width:3px;height:6px;border-radius:2px;background:var(--orange);animation:wheel 1.7s var(--ease) infinite}
-@keyframes wheel{0%{opacity:0;transform:translate(-50%,0)}30%{opacity:1}70%{opacity:1}100%{opacity:0;transform:translate(-50%,9px)}}
 
 /* ════════════════════ INFINITE MARQUEE ════════════════════ */
 .marquee{width:100vw;flex-shrink:0;margin:8px 0 0;overflow:hidden;position:relative;
@@ -255,14 +248,19 @@ img{display:block;max-width:100%}
   background:rgba(8,8,10,.5);
   -webkit-mask-image:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent);
   mask-image:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent)}
-.marquee-track{display:flex;width:max-content;gap:0;animation:marq 42s linear infinite;will-change:transform}
+.marquee-track{display:flex;width:max-content;gap:0;animation:marq 76s linear infinite;will-change:transform}
 .marquee:hover .marquee-track{animation-play-state:paused}
-@keyframes marq{to{transform:translateX(-50%)}}
+@keyframes marq{from{transform:translateX(-50%)}to{transform:translateX(0)}}
 .marq-item{display:inline-flex;align-items:center;gap:11px;padding:0 26px;
   font-family:var(--f-disp);font-weight:600;font-size:clamp(.92rem,2.4vw,1.18rem);
   letter-spacing:.02em;text-transform:uppercase;color:rgba(255,255,255,.82);white-space:nowrap}
 .marq-item svg{flex-shrink:0;opacity:.9}
 .marq-sep{color:var(--orange)}
+.marquee.glitching{animation:marqGl .22s steps(2,end) both}
+.marquee.glitching .marq-item{text-shadow:2px 0 rgba(22,240,255,.55),-2px 0 rgba(255,77,0,.8)}
+.marquee.glitching .marq-sep svg{filter:drop-shadow(0 0 7px #16f0ff)}
+@keyframes marqGl{0%{transform:translateX(-5px) skewX(-3deg)}40%{transform:translateX(4px) skewX(2deg)}70%{transform:translateX(-2px) skewX(-1deg)}100%{transform:none}}
+@media (prefers-reduced-motion:reduce){.marquee.glitching{animation:none}.marquee.glitching .marq-item{text-shadow:none}}
 
 /* ════════════════════ MANIFESTO / PROBLEM ════════════════════ */
 .manifesto-sec{width:100%;max-width:920px;margin:0 auto;padding:18px 0 8px;text-align:left}
@@ -446,6 +444,9 @@ img{display:block;max-width:100%}
 .stage.show-quote .quote-layer{opacity:1;transform:translateX(0)}
 .orbit-node{transition:opacity .4s var(--ease),background .35s,border-color .35s}
 .stage.show-quote .orbit-node{opacity:0}
+.stage .on-1{top:5%;left:-3%}
+.stage .on-2{top:47%;right:-3%}
+.stage .on-3{bottom:10%;left:-4%}
 .stage.show-quote .ring-deco circle{stroke:rgba(255,77,0,.32);transition:stroke .5s}
 .fs-info{flex:1;min-width:262px}
 .fs-eyebrow{display:inline-flex;align-items:center;gap:10px;font-family:var(--f-mono);font-size:9px;letter-spacing:.24em;text-transform:uppercase;color:var(--orange);margin-bottom:14px}
@@ -800,10 +801,10 @@ img{display:block;max-width:100%}
     <span class="nav-name">DIFFERENT<span>·</span>NETWORK</span>
   </a>
   <div class="nav-links">
-    <a href="#manifesto">Manifesto</a>
+    <a href="#komunitas">Komunitas</a>
     <a href="#kenapa">Kenapa Kami</a>
     <a href="#program">Program</a>
-    <a href="#komunitas">Komunitas</a>
+    <a href="#manifesto">Manifesto</a>
     <a href="#kurikulum">Kurikulum</a>
     <a href="#founder">Founder</a>
   </div>
@@ -867,7 +868,6 @@ img{display:block;max-width:100%}
       <div class="hstat"><div class="n"><span data-count="10">10</span><span class="o">+</span></div><div class="l">AI Tools</div></div>
     </div>
 
-    <div class="scroll-cue" aria-hidden="true"><span class="mouse"></span>SCROLL</div>
   </section>
 
   <!-- ═══════ 2 · INFINITE MARQUEE ═══════ -->
@@ -875,21 +875,35 @@ img{display:block;max-width:100%}
     <div class="marquee-track" id="marqTrack"></div>
   </div>
 
-  <!-- ═══════ 3 · MANIFESTO / PROBLEM ═══════ -->
-  <section class="block" id="manifesto">
-    <div class="manifesto-sec reveal">
-      <p class="sec-num">01 / MANIFESTO</p>
-      <h2 class="mf-statement">Indonesia sedang <span class="o">tertinggal</span> di era AI <span class="dim">- dan mayoritas orang bahkan belum sadar.</span></h2>
-      <div class="mf-body">
-        <div class="mf-col">
-          <p>Setiap hari muncul tools AI baru yang mengubah cara dunia bekerja. Di negara lain, orang berlomba menguasainya. Di sini, kebanyakan masih jadi <b>penonton</b> - menunggu, ragu, atau tenggelam di banjir konten penuh hype kosong dan janji palsu.</p>
-          <p>Different Network lahir untuk melawan itu. Kami memilih jalan yang berbeda: <b>jujur, tajam, berbasis data, dan selalu berpihak pada komunitas</b> - bukan tren, bukan sponsor, bukan siapapun yang berkuasa.</p>
+  <!-- ═══════ 3 · KOMUNITAS DISCORD ═══════ -->
+  <section class="block" id="komunitas">
+    <div class="sec-head reveal">
+      <span class="sec-tag">Komunitas Inti</span>
+      <h2 class="sec-title">Tempat Para <span class="o">Pelaku</span> Berkumpul</h2>
+      <p class="sec-sub">Gratis, terbuka, dan hidup 24 jam. Inilah jantung dari gerakan Different Network.</p>
+    </div>
+    <div class="bento">
+      <a class="tile discord reveal" data-tilt href="https://discord.gg/BU8BbvjA" target="_blank" rel="noopener noreferrer" aria-label="Gabung server Discord Different Network">
+        <span class="corner c-tl"></span><span class="corner c-br"></span>
+        <div class="dc-top">
+          <span class="dc-badge"><svg width="10" height="10" viewBox="0 0 24 24" fill="#fff"><path d="M13 1l2.26 6.47L22 9l-5.5 4.84L18.08 21 13 17.73 7.92 21 9.5 13.84 4 9l6.74-1.53z"/></svg>JOIN THE PACK</span>
+          <span class="dc-live"><b></b>SERVER ACTIVE</span>
         </div>
-        <div class="mf-col">
-          <p class="mf-quote">"Orang yang menguasai AI hari ini akan menentukan nasibnya sendiri esok hari. Yang tidak, akan jadi alat bagi yang menguasainya."<span>~ Different Network</span></p>
-          <p>Ini bukan kursus biasa. Ini gerakan untuk membuat satu generasi Indonesia berhenti jadi penonton, dan mulai jadi <b>pelaku</b> yang menentukan arahnya sendiri.</p>
+        <div class="dc-main">
+          <div class="dc-ico"><svg width="34" height="26" viewBox="0 0 30 24" fill="none"><path d="M25.39 2.65A24.6 24.6 0 0 0 19.31.75a.09.09 0 0 0-.1.05c-.27.49-.57 1.13-.78 1.63a23.32 23.32 0 0 0-6.86 0C11.36 1.92 11.05 1.29 10.78.8a.09.09 0 0 0-.1-.05A24.55 24.55 0 0 0 4.6 2.65a.08.08 0 0 0-.04.03C.67 8.37-.4 13.94.12 19.43a.1.1 0 0 0 .04.07 24.9 24.9 0 0 0 7.51 3.79.09.09 0 0 0 .1-.03c.58-.79 1.09-1.61 1.53-2.48a.09.09 0 0 0-.05-.12 16.4 16.4 0 0 1-2.34-1.11.09.09 0 0 1-.01-.15l.47-.36a.09.09 0 0 1 .09-.01c4.91 2.24 10.23 2.24 15.08 0a.09.09 0 0 1 .1.01l.47.36a.09.09 0 0 1-.01.15c-.74.44-1.52.8-2.34 1.11a.09.09 0 0 0-.05.13c.45.86.96 1.68 1.53 2.47a.09.09 0 0 0 .1.03 24.83 24.83 0 0 0 7.51-3.79.09.09 0 0 0 .04-.07c.62-6.35-1.05-11.88-4.44-16.8a.07.07 0 0 0-.04-.03zM10.02 16.11c-1.48 0-2.7-1.36-2.7-3.02 0-1.67 1.2-3.03 2.7-3.03 1.51 0 2.72 1.37 2.7 3.03 0 1.66-1.2 3.02-2.7 3.02zm9.96 0c-1.48 0-2.7-1.36-2.7-3.02 0-1.67 1.2-3.03 2.7-3.03 1.51 0 2.72 1.37 2.7 3.03 0 1.66-1.19 3.02-2.7 3.02z" fill="#fff"/></svg></div>
+          <div>
+            <div class="dc-p">DISCORD · OFFICIAL SERVER</div>
+            <div class="dc-h">GABUNG KOMUNITAS</div>
+          </div>
         </div>
-      </div>
+        <p class="dc-desc">Komunitas AI terbesar &amp; paling aktif di Indonesia. Tempat para builder, kreator, dan inovator saling berbagi insight, berkolaborasi, dan tumbuh bersama setiap hari.</p>
+        <div class="dc-stats">
+          <div class="stat"><div class="n">#1</div><div class="l">AI Community ID</div></div>
+          <div class="stat"><div class="n">24/7</div><div class="l">Always Active</div></div>
+          <div class="stat"><div class="n">FREE</div><div class="l">Open For All</div></div>
+        </div>
+        <span class="dc-cta">BERGABUNG SEKARANG →</span>
+      </a>
     </div>
   </section>
 
@@ -973,35 +987,21 @@ img{display:block;max-width:100%}
     </div>
   </section>
 
-  <!-- ═══════ 6 · KOMUNITAS DISCORD ═══════ -->
-  <section class="block" id="komunitas">
-    <div class="sec-head reveal">
-      <span class="sec-tag">Komunitas Inti</span>
-      <h2 class="sec-title">Tempat Para <span class="o">Pelaku</span> Berkumpul</h2>
-      <p class="sec-sub">Gratis, terbuka, dan hidup 24 jam. Inilah jantung dari gerakan Different Network.</p>
-    </div>
-    <div class="bento">
-      <a class="tile discord reveal" data-tilt href="https://discord.gg/BU8BbvjA" target="_blank" rel="noopener noreferrer" aria-label="Gabung server Discord Different Network">
-        <span class="corner c-tl"></span><span class="corner c-br"></span>
-        <div class="dc-top">
-          <span class="dc-badge"><svg width="10" height="10" viewBox="0 0 24 24" fill="#fff"><path d="M13 1l2.26 6.47L22 9l-5.5 4.84L18.08 21 13 17.73 7.92 21 9.5 13.84 4 9l6.74-1.53z"/></svg>JOIN THE PACK</span>
-          <span class="dc-live"><b></b>SERVER ACTIVE</span>
+  <!-- ═══════ 6 · MANIFESTO / PROBLEM ═══════ -->
+  <section class="block" id="manifesto">
+    <div class="manifesto-sec reveal">
+      <p class="sec-num">03 / MANIFESTO</p>
+      <h2 class="mf-statement">Indonesia sedang <span class="o">tertinggal</span> di era AI <span class="dim">- dan mayoritas orang bahkan belum sadar.</span></h2>
+      <div class="mf-body">
+        <div class="mf-col">
+          <p>Setiap hari muncul tools AI baru yang mengubah cara dunia bekerja. Di negara lain, orang berlomba menguasainya. Di sini, kebanyakan masih jadi <b>penonton</b> - menunggu, ragu, atau tenggelam di banjir konten penuh hype kosong dan janji palsu.</p>
+          <p>Different Network lahir untuk melawan itu. Kami memilih jalan yang berbeda: <b>jujur, tajam, berbasis data, dan selalu berpihak pada komunitas</b> - bukan tren, bukan sponsor, bukan siapapun yang berkuasa.</p>
         </div>
-        <div class="dc-main">
-          <div class="dc-ico"><svg width="34" height="26" viewBox="0 0 30 24" fill="none"><path d="M25.39 2.65A24.6 24.6 0 0 0 19.31.75a.09.09 0 0 0-.1.05c-.27.49-.57 1.13-.78 1.63a23.32 23.32 0 0 0-6.86 0C11.36 1.92 11.05 1.29 10.78.8a.09.09 0 0 0-.1-.05A24.55 24.55 0 0 0 4.6 2.65a.08.08 0 0 0-.04.03C.67 8.37-.4 13.94.12 19.43a.1.1 0 0 0 .04.07 24.9 24.9 0 0 0 7.51 3.79.09.09 0 0 0 .1-.03c.58-.79 1.09-1.61 1.53-2.48a.09.09 0 0 0-.05-.12 16.4 16.4 0 0 1-2.34-1.11.09.09 0 0 1-.01-.15l.47-.36a.09.09 0 0 1 .09-.01c4.91 2.24 10.23 2.24 15.08 0a.09.09 0 0 1 .1.01l.47.36a.09.09 0 0 1-.01.15c-.74.44-1.52.8-2.34 1.11a.09.09 0 0 0-.05.13c.45.86.96 1.68 1.53 2.47a.09.09 0 0 0 .1.03 24.83 24.83 0 0 0 7.51-3.79.09.09 0 0 0 .04-.07c.62-6.35-1.05-11.88-4.44-16.8a.07.07 0 0 0-.04-.03zM10.02 16.11c-1.48 0-2.7-1.36-2.7-3.02 0-1.67 1.2-3.03 2.7-3.03 1.51 0 2.72 1.37 2.7 3.03 0 1.66-1.2 3.02-2.7 3.02zm9.96 0c-1.48 0-2.7-1.36-2.7-3.02 0-1.67 1.2-3.03 2.7-3.03 1.51 0 2.72 1.37 2.7 3.03 0 1.66-1.19 3.02-2.7 3.02z" fill="#fff"/></svg></div>
-          <div>
-            <div class="dc-p">DISCORD · OFFICIAL SERVER</div>
-            <div class="dc-h">GABUNG KOMUNITAS</div>
-          </div>
+        <div class="mf-col">
+          <p class="mf-quote">"Orang yang menguasai AI hari ini akan menentukan nasibnya sendiri esok hari. Yang tidak, akan jadi alat bagi yang menguasainya."<span>~ Different Network</span></p>
+          <p>Ini bukan kursus biasa. Ini gerakan untuk membuat satu generasi Indonesia berhenti jadi penonton, dan mulai jadi <b>pelaku</b> yang menentukan arahnya sendiri.</p>
         </div>
-        <p class="dc-desc">Komunitas AI terbesar &amp; paling aktif di Indonesia. Tempat para builder, kreator, dan inovator saling berbagi insight, berkolaborasi, dan tumbuh bersama setiap hari.</p>
-        <div class="dc-stats">
-          <div class="stat"><div class="n">#1</div><div class="l">AI Community ID</div></div>
-          <div class="stat"><div class="n">24/7</div><div class="l">Always Active</div></div>
-          <div class="stat"><div class="n">FREE</div><div class="l">Open For All</div></div>
-        </div>
-        <span class="dc-cta">BERGABUNG SEKARANG →</span>
-      </a>
+      </div>
     </div>
   </section>
 
@@ -1631,26 +1631,6 @@ img{display:block;max-width:100%}
       </div>
     </div>
 
-    <!-- QUOTE CARD SWAP -->
-    <div class="bento" style="margin-top:34px">
-      <div class="tile quote-card reveal" id="virgilCard" role="button" tabindex="0" aria-label="Quote - arahkan kursor atau ketuk untuk mengganti">
-        <span class="qframe q-tl"></span><span class="qframe q-tr"></span><span class="qframe q-bl"></span><span class="qframe q-br"></span>
-        <div class="qc-photo">
-          <picture class="qc-ph qc-ph-virgil"><source srcset="./virgil.webp" type="image/webp"><img src="./virgil.png" alt="Patung Virgil"></picture>
-          <picture class="qc-ph qc-ph-me"><source srcset="./me.webp" type="image/webp"><img src="./me.png" alt="Steffen Kwik"></picture>
-        </div>
-        <div class="qc-textwrap">
-          <div class="qc-text qc-text-virgil">
-            <p class="qc-q">&ldquo;<span class="o">Fortune</span> Favors<br>The <span class="o">Bold</span>&rdquo;</p>
-            <p class="qc-by">~ Virgil</p>
-          </div>
-          <div class="qc-text qc-text-me">
-            <p class="qc-q">&ldquo;Di masa depan, bukan <span class="o">AI</span> yang menggantikan pekerjaanmu - tapi orang yang bisa <span class="o">menggunakan AI</span>.&rdquo;</p>
-            <p class="qc-by">~ Steffen Kwik</p>
-          </div>
-        </div>
-      </div>
-    </div>
   </section>
 
   <!-- ═══════ 10 · SOCIAL GRID ═══════ -->
@@ -1711,6 +1691,29 @@ img{display:block;max-width:100%}
         Join Discord Gratis</span>
     </a>
   </div>
+  </section>
+
+  <!-- ═══════ 11.5 · QUOTE CARD ═══════ -->
+  <section class="block" aria-label="Quote">
+    <div class="bento">
+      <div class="tile quote-card reveal" id="virgilCard" role="button" tabindex="0" aria-label="Quote - arahkan kursor atau ketuk untuk mengganti">
+        <span class="qframe q-tl"></span><span class="qframe q-tr"></span><span class="qframe q-bl"></span><span class="qframe q-br"></span>
+        <div class="qc-photo">
+          <picture class="qc-ph qc-ph-virgil"><source srcset="./virgil.webp" type="image/webp"><img src="./virgil.png" alt="Patung Virgil"></picture>
+          <picture class="qc-ph qc-ph-me"><source srcset="./me.webp" type="image/webp"><img src="./me.png" alt="Steffen Kwik"></picture>
+        </div>
+        <div class="qc-textwrap">
+          <div class="qc-text qc-text-virgil">
+            <p class="qc-q">&ldquo;<span class="o">Fortune</span> Favors<br>The <span class="o">Bold</span>&rdquo;</p>
+            <p class="qc-by">~ Virgil</p>
+          </div>
+          <div class="qc-text qc-text-me">
+            <p class="qc-q">&ldquo;Di masa depan, bukan <span class="o">AI</span> yang menggantikan pekerjaanmu - tapi orang yang bisa <span class="o">menggunakan AI</span>.&rdquo;</p>
+            <p class="qc-by">~ Steffen Kwik</p>
+          </div>
+        </div>
+      </div>
+    </div>
   </section>
 
   <!-- ═══════ 12 · FOOTER / ENDING ═══════ -->
@@ -2123,6 +2126,16 @@ img{display:block;max-width:100%}
       if(inView&&!reduce&&!(prog(cur)&&prog(cur).classList.contains('run')))startBar();else applyRun();
     });},{threshold:.3});io.observe(xpl);
   }else{inView=true;startBar();}
+})();
+
+/* ════════ MARQUEE GLITCH (occasional) ════════ */
+(function(){
+  if(matchMedia('(prefers-reduced-motion:reduce)').matches)return;
+  var m=document.querySelector('.marquee');if(!m)return;
+  function g(){m.classList.add('glitching');
+    setTimeout(function(){m.classList.remove('glitching');},230);
+    setTimeout(g,2800+Math.random()*3600);}
+  setTimeout(g,3400);
 })();
 </script>
 </body>
