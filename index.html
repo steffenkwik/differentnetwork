@@ -169,18 +169,14 @@ img{display:block;max-width:100%}
 /* ════════════════════ HERO ════════════════════ */
 .hero{position:relative;width:100%;min-height:100svh;display:flex;flex-direction:column;
   align-items:center;justify-content:center;text-align:center;padding:96px 0 40px;gap:6px}
-.hero-logo{position:relative;width:min(320px,68vw);aspect-ratio:1;margin-bottom:6px;flex-shrink:0}
-.hl-glow{position:absolute;inset:8%;border-radius:50%;
-  background:radial-gradient(circle,rgba(255,77,0,.42),rgba(255,77,0,.06) 56%,transparent 72%);
-  filter:blur(26px);z-index:0;animation:bob 7s ease-in-out infinite}
+.hero-logo{position:relative;width:min(400px,80vw);aspect-ratio:1;margin-bottom:6px;flex-shrink:0}
 @keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(-7px)}}
 .ring-deco{position:absolute;inset:0;z-index:1;pointer-events:none}
 .ring-deco circle{fill:none}
 .r-spin{transform-origin:center;animation:spin 26s linear infinite}
 .r-spin-2{transform-origin:center;animation:spin 34s linear infinite reverse}
 @keyframes spin{to{transform:rotate(360deg)}}
-.hl-mark{position:absolute;inset:0;z-index:2;width:86%;height:86%;margin:7%;object-fit:contain;
-  mix-blend-mode:screen;animation:bob 7s ease-in-out infinite}
+.hl-mark{position:absolute;inset:0;z-index:2;width:96%;height:96%;margin:2%;object-fit:contain}
 .orbit-node{position:absolute;z-index:3;display:flex;align-items:center;gap:6px;
   padding:5px 10px;border-radius:30px;background:rgba(10,10,12,.7);border:1px solid var(--line-2);
   backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);font-family:var(--f-mono);font-size:8px;
@@ -193,6 +189,9 @@ img{display:block;max-width:100%}
 @keyframes float1{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
 @keyframes float2{0%,100%{transform:translateY(0)}50%{transform:translateY(9px)}}
 @keyframes float3{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
+#heroLogo .on-1{left:-7%}
+#heroLogo .on-2{right:-11%}
+#heroLogo .on-3{left:-9%}
 
 .eyebrow{display:inline-flex;align-items:center;gap:9px;font-family:var(--f-mono);font-size:9.5px;
   letter-spacing:.26em;text-transform:uppercase;color:#fff;margin-bottom:6px;
@@ -245,22 +244,18 @@ img{display:block;max-width:100%}
 /* ════════════════════ INFINITE MARQUEE ════════════════════ */
 .marquee{width:100vw;flex-shrink:0;margin:8px 0 0;overflow:hidden;position:relative;
   padding:16px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line);
-  background:rgba(8,8,10,.5);
-  -webkit-mask-image:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent);
-  mask-image:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent)}
-.marquee-track{display:flex;width:max-content;gap:0;animation:marq 76s linear infinite;will-change:transform}
-.marquee:hover .marquee-track{animation-play-state:paused}
-@keyframes marq{from{transform:translateX(-50%)}to{transform:translateX(0)}}
+  background:rgba(8,8,10,.5)}
+.marquee::before,.marquee::after{content:'';position:absolute;top:0;bottom:0;width:11%;z-index:2;pointer-events:none}
+.marquee::before{left:0;background:linear-gradient(90deg,#000,transparent)}
+.marquee::after{right:0;background:linear-gradient(270deg,#000,transparent)}
+.marquee-track{display:flex;width:max-content;gap:0;will-change:transform}
 .marq-item{display:inline-flex;align-items:center;gap:11px;padding:0 26px;
   font-family:var(--f-disp);font-weight:600;font-size:clamp(.92rem,2.4vw,1.18rem);
   letter-spacing:.02em;text-transform:uppercase;color:rgba(255,255,255,.82);white-space:nowrap}
 .marq-item svg{flex-shrink:0;opacity:.9}
 .marq-sep{color:var(--orange)}
-.marquee.glitching{animation:marqGl .22s steps(2,end) both}
-.marquee.glitching .marq-item{text-shadow:2px 0 rgba(22,240,255,.55),-2px 0 rgba(255,77,0,.8)}
-.marquee.glitching .marq-sep svg{filter:drop-shadow(0 0 7px #16f0ff)}
-@keyframes marqGl{0%{transform:translateX(-5px) skewX(-3deg)}40%{transform:translateX(4px) skewX(2deg)}70%{transform:translateX(-2px) skewX(-1deg)}100%{transform:none}}
-@media (prefers-reduced-motion:reduce){.marquee.glitching{animation:none}.marquee.glitching .marq-item{text-shadow:none}}
+.marquee.glitching .marq-item{text-shadow:3px 0 rgba(22,240,255,.6),-3px 0 rgba(255,77,0,.85)}
+.marquee.glitching .marq-sep svg{filter:drop-shadow(0 0 8px #16f0ff)}
 
 /* ════════════════════ MANIFESTO / PROBLEM ════════════════════ */
 .manifesto-sec{width:100%;max-width:920px;margin:0 auto;padding:18px 0 8px;text-align:left}
@@ -576,8 +571,7 @@ img{display:block;max-width:100%}
 /* ════════════════════ DESKTOP ════════════════════ */
 @media (min-width:980px){
   .hero{padding:90px 0 50px}
-  .hero-logo{width:240px}
-  .on-1{left:-22%}.on-2{right:-30%}.on-3{left:-26%}
+  .hero-logo{width:400px}
   .bento.social-row{grid-template-columns:repeat(3,1fr)}
   .social{min-height:150px;padding:24px 22px}
   .s-ico{width:48px;height:48px}.s-h{font-size:1.12rem}
@@ -594,7 +588,7 @@ img{display:block;max-width:100%}
   .shell{padding:0 13px 96px}
   .bento{gap:8px}
   .hero{min-height:auto;padding:84px 0 30px}
-  .hero-logo{width:42vw;max-width:150px}
+  .hero-logo{width:74vw;max-width:300px}
   .on-1,.on-2,.on-3{display:none}
   .eyebrow{font-size:8px;letter-spacing:.16em;padding:6px 12px}
   .name{font-size:2.5rem;letter-spacing:.01em}
@@ -604,7 +598,6 @@ img{display:block;max-width:100%}
   .btn-primary,.btn-ghost{padding:12px 22px;font-size:.78rem}
   .hero-stats{margin-top:32px;gap:16px 24px}
   .hstat .n{font-size:1.4rem}
-  .scroll-cue{display:none}
   .marquee{padding:12px 0}
   .marq-item{padding:0 16px}
   .mf-statement{font-size:1.7rem}
@@ -672,7 +665,7 @@ img{display:block;max-width:100%}
   *,*::before,*::after{animation-duration:.001ms!important;animation-iteration-count:1!important;
     transition-duration:.001ms!important;scroll-behavior:auto!important}
   #net{display:none}.reveal{opacity:1!important;transform:none!important}
-  .marquee-track{animation:none}.portrait,.hl-mark,.hl-glow{animation:none}
+  .portrait{animation:none}
 }
 
 /* ════════════ KURIKULUM EXPLORER ════════════ */
@@ -808,7 +801,7 @@ img{display:block;max-width:100%}
     <a href="#kurikulum">Kurikulum</a>
     <a href="#founder">Founder</a>
   </div>
-  <a class="nav-cta" href="https://differentnetworkai.com" target="_blank" rel="noopener noreferrer" aria-label="Gabung program sertifikasi">
+  <a class="nav-cta" href="https://discord.com/invite/BU8BbvjA" target="_blank" rel="noopener noreferrer" aria-label="Gabung program sertifikasi">
     <span>Gabung</span>
     <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
   </a>
@@ -820,15 +813,11 @@ img{display:block;max-width:100%}
   <!-- ═══════ 1 · HERO ═══════ -->
   <section class="hero">
     <div class="hero-logo reveal" id="heroLogo">
-      <div class="hl-glow"></div>
       <svg class="ring-deco" viewBox="0 0 100 100" aria-hidden="true">
-        <circle class="r-spin" cx="50" cy="50" r="47" stroke="rgba(255,77,0,.18)" stroke-width=".4" stroke-dasharray="2 5"/>
+        <circle class="r-spin" cx="50" cy="50" r="47" stroke="rgba(255,255,255,.16)" stroke-width=".4" stroke-dasharray="2 5"/>
         <circle class="r-spin-2" cx="50" cy="50" r="42" stroke="rgba(255,255,255,.12)" stroke-width=".3" stroke-dasharray="1 8"/>
       </svg>
-      <picture>
-        <source srcset="./logo.webp" type="image/webp">
-        <img class="hl-mark" src="./logo-mark.png" alt="Logo Different Network">
-      </picture>
+      <img class="hl-mark" src="./logo-cut.png" alt="Logo Different Network">
       <div class="orbit-node on-1"><i></i>AGENTIC AI</div>
       <div class="orbit-node on-2"><i></i>NEURAL NET</div>
       <div class="orbit-node on-3"><i></i>AUTOMATION</div>
@@ -846,7 +835,7 @@ img{display:block;max-width:100%}
     <p class="hero-tag reveal">Bukan sekadar platform. <span class="o">Ini gerakan.</span></p>
 
     <div class="hero-cta reveal">
-      <a class="btn-primary mag" href="https://differentnetworkai.com" target="_blank" rel="noopener noreferrer" aria-label="Gabung program sertifikasi Different Network">
+      <a class="btn-primary mag" href="https://discord.com/invite/BU8BbvjA" target="_blank" rel="noopener noreferrer" aria-label="Gabung program sertifikasi Different Network">
         <span class="mag-inner">Gabung Sekarang
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
         </span>
@@ -952,7 +941,7 @@ img{display:block;max-width:100%}
           <li><span class="pb-check"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="#ff4d00" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span><span><b>Bangun skill AI</b> yang nyambung langsung ke karir dan bisnis kamu.</span></li>
           <li><span class="pb-check"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="#ff4d00" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span><span><b>Output lebih cepat</b> tanpa pengulangan yang buang-buang waktu.</span></li>
         </ul>
-        <a class="prog-btn mag" href="https://differentnetworkai.com" target="_blank" rel="noopener noreferrer" aria-label="Gabung program sertifikasi sekarang">
+        <a class="prog-btn mag" href="https://discord.com/invite/BU8BbvjA" target="_blank" rel="noopener noreferrer" aria-label="Gabung program sertifikasi sekarang">
           <span class="mag-inner">Gabung Program
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
           </span>
@@ -1515,7 +1504,7 @@ img{display:block;max-width:100%}
     </div>
     <div class="xpl-cta reveal">
       <span class="xpl-cta-txt">Sembilan modul. Satu tujuan: <b>mengubah kamu dari penonton jadi pelaku.</b></span>
-      <a class="xpl-cta-btn mag" href="https://differentnetworkai.com" target="_blank" rel="noopener noreferrer" aria-label="Mulai belajar di program sertifikasi">
+      <a class="xpl-cta-btn mag" href="https://discord.com/invite/BU8BbvjA" target="_blank" rel="noopener noreferrer" aria-label="Mulai belajar di program sertifikasi">
         <span class="mag-inner">Mulai Belajar
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
         </span>
@@ -1680,7 +1669,7 @@ img{display:block;max-width:100%}
   <h2 class="fc-title">Mulai Bergerak Sekarang.</h2>
   <p class="fc-sub2">Masa depan milik mereka yang menguasai AI hari ini. Gabung gerakan, ambil sertifikasi, dan tentukan nasibmu sendiri.</p>
   <div class="fc-actions">
-    <a class="fc-btn-1 mag" href="https://differentnetworkai.com" target="_blank" rel="noopener noreferrer" aria-label="Gabung program sertifikasi">
+    <a class="fc-btn-1 mag" href="https://discord.com/invite/BU8BbvjA" target="_blank" rel="noopener noreferrer" aria-label="Gabung program sertifikasi">
       <span class="mag-inner">Gabung Program
         <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#ff4d00" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
       </span>
@@ -1764,7 +1753,7 @@ img{display:block;max-width:100%}
 </main>
 
 <!-- ══════ FLOATING CTA ══════ -->
-<a class="fcta" id="fcta" href="https://differentnetworkai.com" target="_blank" rel="noopener noreferrer" aria-label="Mulai bergerak sekarang bersama Different Network">
+<a class="fcta" id="fcta" href="https://discord.com/invite/BU8BbvjA" target="_blank" rel="noopener noreferrer" aria-label="Mulai bergerak sekarang bersama Different Network">
   <span class="fcta-inner">
     <span class="fc-coin"><img src="./logo-mark.png" alt=""></span>
     <span class="fc-banner">
@@ -1801,8 +1790,36 @@ img{display:block;max-width:100%}
   var sep='<span class="marq-sep"><svg width="10" height="10" viewBox="0 0 24 24" fill="#ff4d00"><path d="M12 0l2.4 9.6L24 12l-9.6 2.4L12 24l-2.4-9.6L0 12l9.6-2.4z"/></svg></span>';
   var one='';
   for(var k=0;k<items.length;k++)one+='<span class="marq-item">'+items[k]+sep+'</span>';
-  var t=document.getElementById('marqTrack');
-  if(t)t.innerHTML=one+one; /* duplicate for seamless -50% loop */
+  var wrap=document.querySelector('.marquee'),t=document.getElementById('marqTrack');
+  if(!t)return;
+  t.innerHTML=one+one; /* duplicate for seamless loop */
+  /* JS-driven drift to the RIGHT - keeps moving even when the OS
+     reduce-motion setting freezes CSS animations */
+  var half=0,x=null,SPEED=56,hovered=false,gx=0,gs=0,last=performance.now();
+  function measure(){half=t.scrollWidth/2;if(x===null||x>0||x<-half)x=-half;}
+  measure();
+  addEventListener('resize',measure);
+  addEventListener('load',measure);
+  if(wrap){
+    wrap.addEventListener('mouseenter',function(){hovered=true;});
+    wrap.addEventListener('mouseleave',function(){hovered=false;});
+  }
+  (function frame(now){
+    var dt=Math.min((now-last)/1000,.05);last=now;
+    if(!hovered){x+=SPEED*dt;if(x>=0)x-=half;}
+    t.style.transform='translateX('+(x+gx).toFixed(2)+'px) skewX('+gs.toFixed(2)+'deg)';
+    requestAnimationFrame(frame);
+  })(last);
+  /* occasional glitch: rapid jitter burst + RGB-split text */
+  function burst(){
+    if(wrap)wrap.classList.add('glitching');
+    var n=0,iv=setInterval(function(){
+      n++;gx=Math.random()*16-8;gs=Math.random()*7-3.5;
+      if(n>=5){clearInterval(iv);gx=0;gs=0;if(wrap)wrap.classList.remove('glitching');}
+    },55);
+    setTimeout(burst,2400+Math.random()*3400);
+  }
+  setTimeout(burst,2600);
 })();
 
 /* ════════ NEURAL NETWORK CANVAS ════════ */
@@ -2128,15 +2145,6 @@ img{display:block;max-width:100%}
   }else{inView=true;startBar();}
 })();
 
-/* ════════ MARQUEE GLITCH (occasional) ════════ */
-(function(){
-  if(matchMedia('(prefers-reduced-motion:reduce)').matches)return;
-  var m=document.querySelector('.marquee');if(!m)return;
-  function g(){m.classList.add('glitching');
-    setTimeout(function(){m.classList.remove('glitching');},230);
-    setTimeout(g,2800+Math.random()*3600);}
-  setTimeout(g,3400);
-})();
 </script>
 </body>
 </html>
