@@ -169,7 +169,7 @@ img{display:block;max-width:100%}
 /* ════════════════════ HERO ════════════════════ */
 .hero{position:relative;width:100%;min-height:100svh;display:flex;flex-direction:column;
   align-items:center;justify-content:center;text-align:center;padding:96px 0 40px;gap:6px}
-.hero-logo{position:relative;width:min(400px,80vw);aspect-ratio:1;margin-bottom:6px;flex-shrink:0}
+.hero-logo{position:relative;width:min(320px,72vw);aspect-ratio:1;margin-bottom:6px;flex-shrink:0}
 @keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(-7px)}}
 .ring-deco{position:absolute;inset:0;z-index:1;pointer-events:none}
 .ring-deco circle{fill:none}
@@ -272,8 +272,8 @@ img{display:block;max-width:100%}
   color:#fff!important;line-height:1.5!important;letter-spacing:.01em}
 .mf-quote span{color:var(--muted);font-family:var(--f-mono);font-size:.7em;letter-spacing:.1em;display:block;margin-top:8px}
 
-/* ════════════════════ WHY (3 cards) ════════════════════ */
-.why-grid{width:100%;display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+/* ════════════════════ WHY (4 cards) ════════════════════ */
+.why-grid{width:100%;display:grid;grid-template-columns:repeat(4,1fr);gap:13px}
 .why-card{position:relative;border-radius:18px;padding:30px 26px 28px;overflow:hidden;
   border:1px solid var(--line);background:rgba(13,13,17,.66);
   box-shadow:0 0 0 1px rgba(255,77,0,.05),0 0 18px -3px rgba(255,77,0,.1);
@@ -298,7 +298,7 @@ img{display:block;max-width:100%}
 .why-h{font-family:var(--f-disp);font-weight:700;font-size:1.18rem;text-transform:uppercase;letter-spacing:.01em;color:#fff;margin-bottom:11px;line-height:1.12}
 .why-p{font-family:var(--f-ui);font-size:.9rem;line-height:1.72;color:rgba(255,255,255,.62)}
 .why-p b{color:#fff;font-weight:600}
-@media (max-width:860px){.why-grid{grid-template-columns:1fr}}
+@media (max-width:979px){.why-grid{grid-template-columns:repeat(2,1fr);gap:10px}}
 
 /* ════════════════════ PROGRAM / ACCORDION ════════════════════ */
 .prog-wrap{width:100%;display:flex;gap:46px;align-items:flex-start;flex-wrap:wrap}
@@ -571,7 +571,7 @@ img{display:block;max-width:100%}
 /* ════════════════════ DESKTOP ════════════════════ */
 @media (min-width:980px){
   .hero{padding:90px 0 50px}
-  .hero-logo{width:400px}
+  .hero-logo{width:320px}
   .bento.social-row{grid-template-columns:repeat(3,1fr)}
   .social{min-height:150px;padding:24px 22px}
   .s-ico{width:48px;height:48px}.s-h{font-size:1.12rem}
@@ -588,7 +588,7 @@ img{display:block;max-width:100%}
   .shell{padding:0 13px 96px}
   .bento{gap:8px}
   .hero{min-height:auto;padding:84px 0 30px}
-  .hero-logo{width:74vw;max-width:300px}
+  .hero-logo{width:60vw;max-width:200px}
   .on-1,.on-2,.on-3{display:none}
   .eyebrow{font-size:8px;letter-spacing:.16em;padding:6px 12px}
   .name{font-size:2.5rem;letter-spacing:.01em}
@@ -602,9 +602,12 @@ img{display:block;max-width:100%}
   .marq-item{padding:0 16px}
   .mf-statement{font-size:1.7rem}
   .mf-body{gap:20px;margin-top:22px}
-  .why-card{padding:24px 20px}
-  .why-ico{width:46px;height:46px;margin-bottom:16px}
-  .why-h{font-size:1.06rem}
+  .why-card{padding:17px 14px 18px}
+  .why-ico{width:38px;height:38px;margin-bottom:11px;border-radius:11px}
+  .why-ico svg{width:20px;height:20px}
+  .why-n{font-size:8px;margin-bottom:5px}
+  .why-h{font-size:.92rem;margin-bottom:7px;line-height:1.16}
+  .why-p{font-size:.78rem;line-height:1.5}
   .prog-wrap{gap:26px}
   .prog-btn{padding:13px 28px;font-size:.88rem}
   .acc-head{padding:15px 16px;gap:12px}
@@ -901,7 +904,7 @@ img{display:block;max-width:100%}
     <div class="sec-head reveal">
       <span class="sec-tag">Kenapa Berbeda</span>
       <h2 class="sec-title">Kenapa <span class="o">Different Network?</span></h2>
-      <p class="sec-sub">Bukan janji muluk. Tiga hal yang bikin kami beda dari ribuan konten AI di luar sana.</p>
+      <p class="sec-sub">Bukan janji muluk. Empat hal yang bikin kami beda dari ribuan konten AI di luar sana.</p>
     </div>
     <div class="why-grid">
       <article class="why-card reveal" data-tilt>
@@ -909,21 +912,28 @@ img{display:block;max-width:100%}
         <div class="why-ico"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#ff4d00" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5M2 12l10 5 10-5"/></svg></div>
         <div class="why-n">01</div>
         <h3 class="why-h">Berbasis Praktik Nyata</h3>
-        <p class="why-p">Lupakan teori yang cuma bikin ngantuk. Kamu langsung <b>membangun</b> - automation, AI agent, workflow nyata yang bisa dipakai untuk karir dan bisnismu hari ini juga.</p>
+        <p class="why-p">Bukan teori bikin ngantuk. Kamu langsung <b>membangun</b> automation, AI agent, dan workflow yang kepakai hari ini juga.</p>
       </article>
       <article class="why-card reveal" data-tilt>
         <span class="corner c-tl"></span><span class="corner c-br"></span>
         <div class="why-ico"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#ff4d00" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
         <div class="why-n">02</div>
         <h3 class="why-h">Komunitas Hidup 24/7</h3>
-        <p class="why-p">Kamu nggak akan jalan sendirian. Server Discord aktif sepanjang waktu, tempat <b>builder, kreator, dan inovator</b> saling bantu, berbagi insight, dan tumbuh bareng.</p>
+        <p class="why-p">Nggak jalan sendirian. Discord aktif 24 jam - tempat <b>builder, kreator &amp; inovator</b> tumbuh bareng tiap hari.</p>
       </article>
       <article class="why-card reveal" data-tilt>
         <span class="corner c-tl"></span><span class="corner c-br"></span>
         <div class="why-ico"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#ff4d00" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg></div>
         <div class="why-n">03</div>
-        <h3 class="why-h">Jujur & Anti-Hype</h3>
-        <p class="why-p">Kami nggak jualan mimpi. Apa yang work kami bilang work, apa yang nggak kami bilang terus terang. <b>Berbasis data, selalu di pihak kamu</b> - bukan sponsor.</p>
+        <h3 class="why-h">Jujur &amp; Anti-Hype</h3>
+        <p class="why-p">Kami nggak jualan mimpi. Yang work kami bilang work - <b>berbasis data</b>, selalu di pihak kamu, bukan sponsor.</p>
+      </article>
+      <article class="why-card reveal" data-tilt>
+        <span class="corner c-tl"></span><span class="corner c-br"></span>
+        <div class="why-ico"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#ff4d00" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg></div>
+        <div class="why-n">04</div>
+        <h3 class="why-h">Selalu Update Real-Time</h3>
+        <p class="why-p">AI berubah tiap hari. Kami pantau <b>tools &amp; teknik terbaru</b> biar kamu selalu selangkah di depan.</p>
       </article>
     </div>
   </section>
